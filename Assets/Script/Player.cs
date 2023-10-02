@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    Rigidbody2D rb;
+
+    private Vector2 vector;
+
     // Start is called before the first frame update
+
     void Start()
     {
         
