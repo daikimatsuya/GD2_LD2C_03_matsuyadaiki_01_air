@@ -8,6 +8,7 @@ public class GameManagerScript : MonoBehaviour
     void Start()
     {
         Application.targetFrameRate = 60;
+        Physics2D.gravity = new Vector3(0.0f, 0.0f, 0.0f);
     }
 
     // Update is called once per frame
