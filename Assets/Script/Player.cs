@@ -8,13 +8,24 @@ public class Player : MonoBehaviour
 
     private Vector2 vector;
     private Vector2 rbCheck;
+    private bool isInGame;
+    private int stageNumber;
 
     public float maxSpeed;
     public float acceleration;
     public float brakeTime;
     public float brakePower;
+    public string stage1;
 
     // Start is called before the first frame update
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (isInGame)
+        {
+           
+        }
+    }
+
     private void VectorBrakeX()
     {
         if (rb.velocity.x > 0.1||rb.velocity.x<-0.1)
@@ -101,44 +112,34 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (vector.x>maxSpeed)
-        {
-            vector.x = (float)maxSpeed;
-        }
-        else if (vector.x < -maxSpeed)
-        {
-            vector.x= -(float)maxSpeed;
-        }
-        if (vector.y>maxSpeed)
-        {
-            vector.y= (float)maxSpeed;
-        }
-        else if (vector.y < -maxSpeed)
-        {
-            vector.y=- (float)maxSpeed;
-        }
-
         rb.velocity = new Vector2(rb.velocity.x + vector.x, rb.velocity.y + vector.y);
+
+        if (rb.velocity.x>maxSpeed)
+        {
+            rb.velocity = new Vector2((float)maxSpeed, rb.velocity.y);
+        }
+        else if (rb.velocity.x < -maxSpeed)
+        {
+            rb.velocity = new Vector2(-(float)maxSpeed, rb.velocity.y);
+        }
+        if (rb.velocity.y > maxSpeed)
+        {
+            rb.velocity = new Vector2(rb.velocity.x,(float)maxSpeed);
+        }
+        else if (rb.velocity.y < -maxSpeed)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -(float)maxSpeed);
+        }
+
+
     }
 
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        int a = 0;
-    }
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        int c = 0;
-    }
-    public void OnCollisionStay2D(Collision2D collision)
-    {
-        int b = 0;
-    }
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        isInGame = false;
     }
 
     // Update is called once per frame
