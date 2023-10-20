@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.ProBuilder;
 
-public class Windmill : MonoBehaviour
+public class WindmillYellow : MonoBehaviour
 {
-    private int maxPower;
+  
     private float power;
     public float convertPower;
-    private bool isRock;
+
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,18 +25,19 @@ public class Windmill : MonoBehaviour
 
     }
 
+    public float GetPower()
+    {
+        return power;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        isRock = true;
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (power >= maxPower)
-        {
-            isRock =false;
-        }
+
     }
 }
