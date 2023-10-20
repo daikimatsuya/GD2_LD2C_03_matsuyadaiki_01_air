@@ -73,6 +73,7 @@ public class PlayerFog : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
+       
         if (collision.tag == "PlayerFog")
         {
             isOverlap = true;
@@ -83,6 +84,7 @@ public class PlayerFog : MonoBehaviour
             {
                 collider.isTrigger = true;
             }
+            
         }
     }
 
