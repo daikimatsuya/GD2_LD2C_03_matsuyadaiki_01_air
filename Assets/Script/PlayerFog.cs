@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using Unity.Mathematics;
+using Microsoft.Unity.VisualStudio.Editor;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class PlayerFog : MonoBehaviour
 {
@@ -15,6 +18,7 @@ public class PlayerFog : MonoBehaviour
     Transform fogPosition;
     Rigidbody2D rb;
     new Collider2D collider;
+    UnityEngine.UI.Image image;
 
     private Vector2 playerDistance;
     private bool isStay;
@@ -23,6 +27,7 @@ public class PlayerFog : MonoBehaviour
     private Vector2 OverlapPos;
     private Vector2 overlapDistance;
     private float playerRotate;
+    private bool canShot;
 
     // Start is called before the first frame update
     public void OnTriggerEnter2D(Collider2D collision)
@@ -40,6 +45,10 @@ public class PlayerFog : MonoBehaviour
                 OverlapPos = new Vector2(collision.transform.position.x + 1, collision.transform.position.y + 2);
             }
            
+        }
+        if(collision.tag == "shotLeng")
+        {
+            canShot = true;
         }
 
     }
@@ -70,7 +79,7 @@ public class PlayerFog : MonoBehaviour
         }
         if (isShot)
         {
-            if (collision.gameObject.tag == "shotLeng")
+            if (collision.gameObject.tag == "fogArea")
             {
                 collider.isTrigger = true;
             }
@@ -87,12 +96,18 @@ public class PlayerFog : MonoBehaviour
             {
                 collider.isTrigger = true;
                 isShot = false;
-
+                canShot = false;
+                image.color=new Color(255,255,255, 255);
             }
             else
             {
-                rb.velocity=new Vector2 (rb.velocity.x+shotPower*(float)math.cos(ToRadian(playerRotate)),rb.velocity.y+shotPower*(float)math.sin(ToRadian(playerRotate)));
-                isShot = true;
+                if (canShot)
+                {
+                    image.color = new Color(0.0f, 255, 0.0f, 255.0f);
+                    rb.velocity = Vector3.zero;
+                    rb.velocity = new Vector2(rb.velocity.x + shotPower * (float)math.cos(ToRadian(playerRotate)), rb.velocity.y + shotPower * (float)math.sin(ToRadian(playerRotate)));
+                    isShot = true;
+                }
             }
         }
   
@@ -142,6 +157,7 @@ public class PlayerFog : MonoBehaviour
         fogPosition=GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
         collider=GetComponent<Collider2D>();
+        image=gameObject.GetComponent<UnityEngine.UI.Image>();
         delayTime *= 60;
     }
 

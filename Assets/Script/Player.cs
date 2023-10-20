@@ -198,6 +198,7 @@ public class Player : MonoBehaviour
     {
         return playerRotate;
     }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -208,7 +209,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         PlayerMove();
     }
 }
