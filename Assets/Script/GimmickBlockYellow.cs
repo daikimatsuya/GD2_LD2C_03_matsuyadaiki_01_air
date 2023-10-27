@@ -7,9 +7,11 @@ public class GimmickBlockYellow : MonoBehaviour
     public int gimmickSelect;
     public int maxPower;
 
-    new Transform transform;
+    new RectTransform transform;
     WindmillYellow Windmill;
     private float power;
+    private Vector2 initialPos;
+    private float powerBuff;
 
     private void Gimmick(int nam)
     {
@@ -21,16 +23,82 @@ public class GimmickBlockYellow : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if(nam == 1)
-        {
 
+        //ˆÚ“®ã
+        if (nam == 1)
+        {
+            power = Windmill.GetPower();
+
+            if(power>powerBuff)
+            {
+                powerBuff += 5;
+
+            }
+            if (power < powerBuff)
+            {
+                powerBuff -= 5;
+            }
+            transform.localPosition = new Vector3(initialPos.x, initialPos.y + powerBuff);
+        }
+
+        //ˆÚ“®‰º
+        if (nam == 2)
+        {
+            power = Windmill.GetPower();
+
+            if (power > powerBuff)
+            {
+                powerBuff += 5;
+
+            }
+            if (power < powerBuff)
+            {
+                powerBuff -= 5;
+            }
+            transform.localPosition = new Vector3(initialPos.x, initialPos.y - powerBuff);
+        }
+
+        //ˆÚ“®‰E
+        if (nam == 3)
+        {
+            power = Windmill.GetPower();
+
+            if (power > powerBuff)
+            {
+                powerBuff += 5;
+
+            }
+            if (power < powerBuff)
+            {
+                powerBuff -= 5;
+            }
+            transform.localPosition = new Vector3(initialPos.x + powerBuff, initialPos.y);
+        }
+
+        //ˆÚ“®¶
+        if (nam == 4)
+        {
+            power = Windmill.GetPower();
+
+            if (power > powerBuff)
+            {
+                powerBuff += 5;
+
+            }
+            if (power < powerBuff)
+            {
+                powerBuff -= 5;
+            }
+            transform.localPosition = new Vector3(initialPos.x - powerBuff, initialPos.y);
         }
     }
     // Start is called before the first frame update
     void Start()
     {
-        transform = GetComponent<Transform>();
+        transform = GetComponent<RectTransform>();
+        initialPos = transform.localPosition;
         Windmill=GameObject.Find("WindmillYellow").GetComponent<WindmillYellow>();
+
     }
 
     // Update is called once per frame

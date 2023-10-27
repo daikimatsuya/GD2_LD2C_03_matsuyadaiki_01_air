@@ -9,7 +9,9 @@ public class WindmillYellow : MonoBehaviour
   
     private float power;
     public float convertPower;
-
+    public int setStoreTime;
+    private int storeTime;
+    private bool ishitWind;
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,24 +22,55 @@ public class WindmillYellow : MonoBehaviour
             {
                 Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
                 power += (float)System.Math.Sqrt((rb.velocity.x * rb.velocity.x)) * convertPower;
+                ishitWind = true;
             }
         }
 
+    }
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.tag == "PlayerFog")
+        {
+            ishitWind = false;
+        }
     }
 
     public float GetPower()
     {
         return power;
     }
+
+    private void Store()
+    {
+        if (storeTime < 0)
+        {
+            if (power > 0)
+            {
+                power -= 10;
+                if(power < 0)
+                {
+                    power = 0;
+                }
+            }
+        }
+        if (ishitWind)
+        {
+            storeTime = setStoreTime * 60;
+        }
+        else
+        {
+            storeTime -= 1;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
-      
+        storeTime = setStoreTime * 60;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Store();
     }
 }
