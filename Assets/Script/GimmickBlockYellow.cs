@@ -6,6 +6,7 @@ public class GimmickBlockYellow : MonoBehaviour
 {
     public int gimmickSelect;
     public int maxPower;
+    public int maxMove;
 
     new RectTransform transform;
     WindmillYellow Windmill;
@@ -15,6 +16,7 @@ public class GimmickBlockYellow : MonoBehaviour
 
     private void Gimmick(int nam)
     {
+        //Á–Å
         if(nam == 0)//Ž©‰ó
         {
             power = Windmill.GetPower();
@@ -31,7 +33,10 @@ public class GimmickBlockYellow : MonoBehaviour
 
             if(power>powerBuff)
             {
-                powerBuff += 5;
+                if (powerBuff < maxMove)
+                {
+                    powerBuff += 5;
+                }
 
             }
             if (power < powerBuff)
@@ -48,7 +53,10 @@ public class GimmickBlockYellow : MonoBehaviour
 
             if (power > powerBuff)
             {
-                powerBuff += 5;
+                if (powerBuff < maxMove)
+                {
+                    powerBuff += 5;
+                }
 
             }
             if (power < powerBuff)
@@ -65,7 +73,10 @@ public class GimmickBlockYellow : MonoBehaviour
 
             if (power > powerBuff)
             {
-                powerBuff += 5;
+                if (powerBuff < maxMove)
+                {
+                    powerBuff += 5;
+                }
 
             }
             if (power < powerBuff)
@@ -82,7 +93,10 @@ public class GimmickBlockYellow : MonoBehaviour
 
             if (power > powerBuff)
             {
-                powerBuff += 5;
+                if (powerBuff < maxMove)
+                {
+                    powerBuff += 5;
+                }
 
             }
             if (power < powerBuff)
