@@ -9,6 +9,8 @@ TagManager:
   - PlayerFog
   - shotLeng
   - gate
+  - WindmillBlue
+  - WindmillYellow
   layers:
   - Default
   - TransparentFX

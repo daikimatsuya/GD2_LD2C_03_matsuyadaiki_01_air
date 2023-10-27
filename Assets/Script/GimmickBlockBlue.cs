@@ -2,25 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GimmickBlockYellow : MonoBehaviour
+public class GimmickBlockBlue : MonoBehaviour
 {
     public int gimmickSelect;
     public int maxPower;
     public int maxMove;
 
     new RectTransform transform;
-    public WindmillYellow Windmill;
+    WindmillBlue Windmill;
     private float power;
     private Vector2 initialPos;
     private float powerBuff;
 
     private void Gimmick(int nam)
     {
+
         //Á–Å
-        if(nam == 0)//Ž©‰ó
+        if (nam == 0)
         {
             power = Windmill.GetPower();
-            if(power >=maxPower)
+            if (power >= maxPower)
             {
                 Destroy(gameObject);
             }
@@ -31,7 +32,7 @@ public class GimmickBlockYellow : MonoBehaviour
         {
             power = Windmill.GetPower();
 
-            if(power>powerBuff)
+            if (power > powerBuff)
             {
                 if (powerBuff < maxMove)
                 {
@@ -111,14 +112,12 @@ public class GimmickBlockYellow : MonoBehaviour
     {
         transform = GetComponent<RectTransform>();
         initialPos = transform.localPosition;
-        Windmill=GameObject.FindWithTag("WindmillYellow").GetComponent<WindmillYellow>();
-
+        Windmill = GameObject.FindWithTag("WindmillBlue").GetComponent<WindmillBlue>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         Gimmick(gimmickSelect);
     }
 }
