@@ -11,6 +11,10 @@ TagManager:
   - gate
   - WindmillBlue
   - WindmillYellow
+  - UpWind
+  - DownWind
+  - RightWind
+  - LeftWind
   layers:
   - Default
   - TransparentFX
