@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public float brakePower;
     private int stageSelect;
     private bool isInGate;
+    private float windPower;
 
     // Start is called before the first frame update
     public void OnTriggerStay2D(Collider2D collision)
@@ -28,6 +29,24 @@ public class Player : MonoBehaviour
         {
             isInGate = true;
         }
+        if(collision.tag == "LeftWind")
+        {
+            InWind(0);
+        }
+        if (collision.tag == "RightWind")
+        {
+            InWind(1);
+        }
+        if (collision.tag == "UpWind")
+        {
+            InWind(2);
+        }
+        if (collision.tag == "DownWind")
+        {
+            InWind(3);
+        }
+
+
         if (isInGate)
         {
             if (collision.tag == "stage1Gate")
@@ -39,6 +58,7 @@ public class Player : MonoBehaviour
         {
            
         }
+        
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -54,6 +74,31 @@ public class Player : MonoBehaviour
     }
 
 
+
+    private void InWind(int wind)
+    {
+        windPower = 300;
+        //¶
+        if(wind == 0)
+        {
+            rb.velocity=new Vector2(-windPower,rb.velocity.y);
+        }
+        //‰E
+        if (wind == 1)
+        {
+            rb.velocity = new Vector2(windPower, rb.velocity.y);
+        }
+        //ã
+        if (wind == 2)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, windPower);
+        }
+        //‰º
+        if (wind == 3)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -windPower);
+        }
+    }
     private void VectorBrakeX()
     {
         if (rb.velocity.x > 0.1||rb.velocity.x<-0.1)
