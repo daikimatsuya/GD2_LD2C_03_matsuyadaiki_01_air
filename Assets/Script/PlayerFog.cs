@@ -12,6 +12,7 @@ public class PlayerFog : MonoBehaviour
 {
     public float delayTime;
     public float shotPower;
+    public bool isPlayerStay;
 
     private Player ps;
     private Transform playerPosition;
@@ -28,6 +29,7 @@ public class PlayerFog : MonoBehaviour
     private Vector2 overlapDistance;
     private float playerRotate;
     private bool canShot;
+    private Vector2 initialPos;
 
     // Start is called before the first frame update
     public void OnTriggerEnter2D(Collider2D collision)
@@ -35,6 +37,7 @@ public class PlayerFog : MonoBehaviour
         if (collision.tag == "fogArea")
         {
             isStay = true;
+            isPlayerStay = true;
         }
         if(collision.tag == "PlayerFog")
         {
@@ -161,6 +164,8 @@ public class PlayerFog : MonoBehaviour
         collider=GetComponent<Collider2D>();
         image=gameObject.GetComponent<UnityEngine.UI.Image>();
         delayTime *= 60;
+        fogPosition.position = new Vector3 (fogPosition.position.x,fogPosition.position.y,400);
+        initialPos = transform.position;
     }
 
     // Update is called once per frame
@@ -175,7 +180,10 @@ public class PlayerFog : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x * 0.95f, rb.velocity.y * 0.95f);
 
         isOverlap = false;
-
+        if (!isPlayerStay)
+        {
+            fogPosition.position = new Vector3(initialPos.x, initialPos.y, fogPosition.position.z);
+        }
 
     }
         
