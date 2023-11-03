@@ -30,7 +30,7 @@ RectTransform:
   m_GameObject: {fileID: 67772284148751110}
   m_LocalRotation: {x: -0, y: -0, z: -1, w: 0.0000029504295}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7658915630115784041}
@@ -139,6 +139,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1429a58b329375f479639152572634f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coolTime: 5
+  windTime: 5
+  offTime: 1
+  backBeat: 0
+  coolTimeBuff: 0
+  windTimeBuff: 0
+  offTimeBuff: 0
+  area: {fileID: 0}
 --- !u!1 &4715028909082609465
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +162,7 @@ GameObject:
   - component: {fileID: 2156981064328150854}
   m_Layer: 0
   m_Name: WindArea
-  m_TagString: Untagged
+  m_TagString: LeftWind
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

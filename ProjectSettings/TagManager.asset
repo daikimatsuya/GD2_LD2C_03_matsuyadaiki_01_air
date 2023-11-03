@@ -15,6 +15,7 @@ TagManager:
   - DownWind
   - RightWind
   - LeftWind
+  - Enemy
   layers:
   - Default
   - TransparentFX

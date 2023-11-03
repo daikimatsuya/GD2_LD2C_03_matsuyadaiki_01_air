@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using Unity.Mathematics;
-using Microsoft.Unity.VisualStudio.Editor;
+
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 

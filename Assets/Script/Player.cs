@@ -72,9 +72,18 @@ public class Player : MonoBehaviour
             stageSelect = 0;
         }
     }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            IsDamage();
+        }
+    }
 
-
-
+    private void IsDamage()
+    { 
+    
+    }
     private void InWind(int wind)
     {
         windPower = 300;

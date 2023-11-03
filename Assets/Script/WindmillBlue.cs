@@ -68,7 +68,7 @@ public class WindmillBlue : MonoBehaviour
     {
         setStoreTime = 2;
         storeTime = setStoreTime * 60;
-        convertPower = 0.01f;
+        convertPower = 0.1f;
     
     }
 
