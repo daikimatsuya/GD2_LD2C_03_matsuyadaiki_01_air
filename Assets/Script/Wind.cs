@@ -10,9 +10,9 @@ public class Wind : MonoBehaviour
     public float offTime;
     public bool backBeat;
         
-    public float coolTimeBuff;
-    public float windTimeBuff;
-    public float offTimeBuff;
+    private float coolTimeBuff;
+    private float windTimeBuff;
+    private float offTimeBuff;
     private bool isCool;
     public GameObject area;
    
