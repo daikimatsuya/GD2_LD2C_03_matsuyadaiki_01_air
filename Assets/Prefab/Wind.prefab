@@ -143,9 +143,6 @@ MonoBehaviour:
   windTime: 5
   offTime: 1
   backBeat: 0
-  coolTimeBuff: 0
-  windTimeBuff: 0
-  offTimeBuff: 0
   area: {fileID: 0}
 --- !u!1 &4715028909082609465
 GameObject:
@@ -314,7 +311,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 149c2f3d6dbd1a940bec7722886ec274, type: 3}
+  m_Sprite: {fileID: 21300000, guid: edda709c143ba644e9388c4d7c3395c9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
