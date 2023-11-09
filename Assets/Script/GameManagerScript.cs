@@ -42,5 +42,9 @@ public class GameManagerScript : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)) { 
             ChangeStage(playerScript.GetStageSelect());
         }
+        if (playerScript.GetPlayerHitPoint() == 0)
+        {
+
+        }
     }
 }

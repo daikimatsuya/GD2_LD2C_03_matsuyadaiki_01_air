@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     private Vector2 rbCheck;
     private float playerRotate;
     private bool isInGame;
+    private int playerHitPoint;
+    private float invincibleBuff;
 
     public float maxSpeed;
     public float acceleration;
@@ -21,6 +23,7 @@ public class Player : MonoBehaviour
     private int stageSelect;
     private bool isInGate;
     private float windPower;
+    public float invincibleTime;
 
     // Start is called before the first frame update
     public void OnTriggerStay2D(Collider2D collision)
@@ -76,13 +79,24 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            IsDamage();
+            if (invincibleBuff <= 0)
+            {
+                IsDamage();
+            }
+        }
+        if( collision.gameObject.tag == "Needle")
+        {
+            if (invincibleBuff <= 0)
+            {
+                IsDamage();
+            }
         }
     }
 
     private void IsDamage()
-    { 
-    
+    {
+        playerHitPoint--;
+        invincibleBuff = invincibleTime;
     }
     private void InWind(int wind)
     {
@@ -252,17 +266,26 @@ public class Player : MonoBehaviour
     {
         return playerRotate;
     }
+    public int GetPlayerHitPoint()
+    {
+        return playerHitPoint;
+    }
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         tf=GetComponent<RectTransform>();
         isInGame = false;
+        playerHitPoint = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (invincibleBuff > 0)
+        {
+            invincibleBuff--;
+        }
         PlayerMove();
     }
 }
