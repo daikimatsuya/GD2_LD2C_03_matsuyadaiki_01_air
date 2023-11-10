@@ -39,9 +39,9 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) { 
+      
             ChangeStage(playerScript.GetStageSelect());
-        }
+        
         if (playerScript.GetPlayerHitPoint() == 0)
         {
             Scene loadScene =SceneManager.GetActiveScene();

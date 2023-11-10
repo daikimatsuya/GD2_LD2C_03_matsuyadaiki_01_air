@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0980af9208cb7a042bf9fc6461bab3ba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c453d44d6b613c418566864c73b866d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -130,3 +130,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayTime: 0.1
   shotPower: 1300
+  isPlayerStay: 0

@@ -139,8 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1429a58b329375f479639152572634f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolTime: 5
-  windTime: 5
+  coolTime: 4
+  windTime: 4
   offTime: 1
   backBeat: 0
   area: {fileID: 0}

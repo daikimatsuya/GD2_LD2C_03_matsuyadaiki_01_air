@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     private Vector2 rbCheck;
     private float playerRotate;
     private bool isInGame;
-    private int playerHitPoint;
+    public int playerHitPoint;
     private float invincibleBuff;
 
     public float maxSpeed;
@@ -96,7 +96,7 @@ public class Player : MonoBehaviour
     private void IsDamage()
     {
         playerHitPoint--;
-        invincibleBuff = invincibleTime;
+        invincibleBuff = invincibleTime * 60;
     }
     private void InWind(int wind)
     {
