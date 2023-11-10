@@ -29,6 +29,18 @@ public class Player : MonoBehaviour
     private float windPower;
     public float invincibleTime;
 
+    public GameObject hp00;
+    public GameObject hp01;
+    public GameObject hp02;
+
+    public GameObject hp10;
+    public GameObject hp11;
+    public GameObject hp12;
+
+    public GameObject hp20;
+    public GameObject hp21;
+    public GameObject hp22;
+
 
     // Start is called before the first frame update
     public void OnTriggerStay2D(Collider2D collision)
@@ -295,10 +307,10 @@ public class Player : MonoBehaviour
         isInGame = false;
         playerHitPoint = 3;
 
-       
+       hp00=GameObject.FindWithTag("0hp").GetComponent<GameObject>();
 
 
-      
+
     }
 
     // Update is called once per frame
