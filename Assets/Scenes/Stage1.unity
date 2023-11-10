@@ -20793,6 +20793,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 112756328482332178, guid: 8ee1c35f8f1473b47a1ad25916f600e3, type: 3}
+      propertyPath: m_TagString
+      value: hp
+      objectReference: {fileID: 0}
     - target: {fileID: 1319722068707486260, guid: 8ee1c35f8f1473b47a1ad25916f600e3, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25
@@ -20845,6 +20849,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6834547742472377534, guid: 8ee1c35f8f1473b47a1ad25916f600e3, type: 3}
+      propertyPath: m_TagString
+      value: hp
+      objectReference: {fileID: 0}
     - target: {fileID: 6847612307477498874, guid: 8ee1c35f8f1473b47a1ad25916f600e3, type: 3}
       propertyPath: m_Name
       value: GameObject
@@ -20896,6 +20904,10 @@ PrefabInstance:
     - target: {fileID: 7929442991728772989, guid: 8ee1c35f8f1473b47a1ad25916f600e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8845869025766772546, guid: 8ee1c35f8f1473b47a1ad25916f600e3, type: 3}
+      propertyPath: m_TagString
+      value: hp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ee1c35f8f1473b47a1ad25916f600e3, type: 3}

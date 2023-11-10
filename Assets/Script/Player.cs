@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Mathematics;
 using System;
+using Microsoft.Unity.VisualStudio.Editor;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class Player : MonoBehaviour
 {
@@ -24,6 +28,7 @@ public class Player : MonoBehaviour
     private bool isInGate;
     private float windPower;
     public float invincibleTime;
+
 
     // Start is called before the first frame update
     public void OnTriggerStay2D(Collider2D collision)
@@ -97,6 +102,18 @@ public class Player : MonoBehaviour
     {
         playerHitPoint--;
         invincibleBuff = invincibleTime * 60;
+        if (playerHitPoint == 2)
+        {
+       
+        }
+        if (playerHitPoint == 1)
+        {
+
+        }
+        if(playerHitPoint == 0)
+        {
+     
+        }
     }
     private void InWind(int wind)
     {
@@ -277,6 +294,11 @@ public class Player : MonoBehaviour
         tf=GetComponent<RectTransform>();
         isInGame = false;
         playerHitPoint = 3;
+
+       
+
+
+      
     }
 
     // Update is called once per frame

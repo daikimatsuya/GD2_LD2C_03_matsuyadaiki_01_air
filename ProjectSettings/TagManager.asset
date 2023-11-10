@@ -17,6 +17,10 @@ TagManager:
   - LeftWind
   - Enemy
   - Needle
+  - 1hp
+  - 2hp
+  - 0hp
+  - hp
   layers:
   - Default
   - TransparentFX
