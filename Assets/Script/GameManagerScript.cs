@@ -44,7 +44,8 @@ public class GameManagerScript : MonoBehaviour
         }
         if (playerScript.GetPlayerHitPoint() == 0)
         {
-
+            Scene loadScene =SceneManager.GetActiveScene();
+            SceneManager.LoadScene(loadScene.name);
         }
     }
 }

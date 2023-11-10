@@ -16,6 +16,7 @@ TagManager:
   - RightWind
   - LeftWind
   - Enemy
+  - Needle
   layers:
   - Default
   - TransparentFX
